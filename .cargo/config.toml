@@ -1,0 +1,16 @@
+# The database tests run against these servers. Each is skipped when its variable is
+# empty, for example: MYSQL_URL= cargo test
+# Start the local containers with scripts/test-databases.sh. The credentials below are
+# throwaway values for those containers and are used nowhere else.
+[env]
+DATABASE_URL = { value = "postgres://indexer:indexer@localhost:5432/indexer_test", force = false }
+MYSQL_URL = { value = "mysql://root:indexer@127.0.0.1:3306", force = false }
+MARIADB_URL = { value = "mysql://root:indexer@127.0.0.1:3307", force = false }
+MSSQL_URL = { value = "server=tcp:127.0.0.1,1433;user=sa;password=Indexer!Passw0rd;TrustServerCertificate=true", force = false }
+MSSQL2025_URL = { value = "server=tcp:127.0.0.1,1434;user=sa;password=Indexer!Passw0rd;TrustServerCertificate=true", force = false }
+CLICKHOUSE_URL = { value = "http://127.0.0.1:8123", force = false }
+CLICKHOUSE_USER = { value = "indexer", force = false }
+CLICKHOUSE_PASSWORD = { value = "indexer", force = false }
+OPENSEARCH_URL = { value = "http://127.0.0.1:9200", force = false }
+ELASTICSEARCH_URL = { value = "http://127.0.0.1:9201", force = false }
+MONGODB_URL = { value = "mongodb://127.0.0.1:27017", force = false }
